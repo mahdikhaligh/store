@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+{% load render_partial %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{{title}}</title>
+    {% include 'shared/_Header_Css.html' %} <!--link css -->
+    </head>
+
+<body>
+
+{% render_partial 'header' %} <!-- header render_partial url -->
+
+{% block content %}{% endblock %} <!--block all use-->
+
+{% render_partial 'footer' %} <!-- footer render_partial  url -->
+
+
+{% include 'shared/_Footer_Js.html' %} <!-- tag java script -->
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% extends "shared/_MainHtml.html" %}
+
+{% block content %}
+
+    <div class="container">
+        <section id="form"><!--form-->
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="signup-form">
+                        <h2>ثبت نام کاربـر جدیـد</h2>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{form_register.username.label}}
+                            {{form_register.username}}
+                            {% for error in form_register.username.errors  %}
+                                <p style="color:red;">{{error}}</p>
+                            {% endfor %}
+
+                            {{form_register.password.label}}
+                            {{form_register.password}}
+                            {% for error in form_register.password.errors  %}
+                                <p style="color:red;">{{error}}</p>
+                            {% endfor %}
+
+                            {{form_register.re_password.label}}
+                            {{form_register.re_password}}
+                            {% for error in form_register.re_password.errors  %}
+                                <p style="color:red;">{{error}}</p>
+                            {% endfor %}
+
+                            {{form_register.email.label}}
+                            {{form_register.email}}
+                            {% for error in form_register.email.errors  %}
+                                <p style="color:red;">{{error}}</p>
+                            {% endfor %}
+
+                            <button type="submit" class="btn btn-success">ثبت نام</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock  %}
